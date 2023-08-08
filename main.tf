@@ -22,7 +22,7 @@ resource "aws_instance" "web_app" {
   }
 
   tags {
-    env = "prod"
+    test = "prod"
   }
 }
 
