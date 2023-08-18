@@ -19,6 +19,9 @@ resource "aws_instance" "web_app" {
     volume_type = "gp3"                     # <<<<< Try changing this to gp2 to compare costs
     volume_size = 500
     iops        = 800
+    tags {
+      env = "prod"
+         }
   }
 
   tags {
@@ -32,4 +35,7 @@ resource "aws_lambda_function" "hello_world" {
   handler       = "exports.test"
   runtime       = "nodejs12.x"
   memory_size   = 512                      # <<<<< Try changing this to 512 to compare costs
+  tags {
+    env = "prod"
+  }
 }
